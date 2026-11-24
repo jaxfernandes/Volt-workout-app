@@ -787,6 +787,41 @@ footer{padding:48px 0 24px;border-top:1px solid var(--stroke);margin-top:60px}
 .howto-tips li{font-size:13px;color:var(--white-2);padding:4px 0 4px 18px;position:relative;line-height:1.5}
 .howto-tips li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--acid)}
 
+/* ===== INJURY / HEALING GUIDE ===== */
+.injury-body-map{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-bottom:6px}
+.injury-fig-col{flex:0 0 150px;display:flex;flex-direction:column;align-items:center}
+.injury-fig-col svg{width:140px;height:auto}
+.injury-region{cursor:pointer;transition:fill .25s,filter .25s}
+.injury-region:hover{filter:brightness(1.4)}
+.injury-region.on{fill:url(#muscleGrad)!important;filter:drop-shadow(0 0 8px var(--gold-glow))}
+.injury-region.warn{fill:rgba(255,61,129,0.7)!important;filter:drop-shadow(0 0 8px rgba(255,61,129,0.6))}
+.injury-fig-col .pick-label{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;line-height:1.4}
+.injury-info-col{flex:1;min-width:240px}
+.injury-region-list{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:14px}
+.injury-region-btn{padding:9px 11px;border-radius:10px;cursor:pointer;transition:.2s;background:var(--panel);border:1px solid var(--stroke);color:var(--white-2);font-size:12.5px;font-weight:600;text-align:left;display:flex;align-items:center;gap:8px}
+.injury-region-btn:hover{background:var(--panel-2);border-color:var(--stroke-2)}
+.injury-region-btn.on{background:linear-gradient(135deg,rgba(212,175,106,0.2),rgba(255,61,129,0.08));border-color:rgba(255,61,129,0.4);color:#fff}
+.injury-region-btn svg{width:14px;height:14px;flex-shrink:0;color:var(--gold-2)}
+.injury-region-btn.on svg{color:var(--pink)}
+.injury-severity{display:flex;gap:8px;margin-bottom:14px;align-items:center}
+.injury-severity .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em;font-weight:600;margin-right:6px}
+.injury-sev-btn{padding:7px 14px;border-radius:8px;cursor:pointer;background:var(--panel);border:1px solid var(--stroke);color:var(--muted);font-size:12px;font-weight:600;transition:.2s}
+.injury-sev-btn.on{background:linear-gradient(135deg,var(--pink),#a8225a);color:#fff;border-color:rgba(255,255,255,0.3)}
+.injury-result{padding:16px;border-radius:12px;background:rgba(255,61,129,0.05);border:1px solid rgba(255,61,129,0.2)}
+.injury-result h5{font-size:15px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.injury-result h5 svg{width:16px;height:16px;color:var(--pink)}
+.injury-result .ix-meta{color:var(--muted);font-size:12px;margin-bottom:12px}
+.injury-technique{display:flex;gap:11px;margin-bottom:11px;padding:12px;border-radius:10px;background:var(--panel);border:1px solid var(--stroke)}
+.injury-technique .ic{width:32px;height:32px;border-radius:9px;flex-shrink:0;display:grid;place-items:center;background:linear-gradient(135deg,rgba(212,175,106,0.25),rgba(0,224,198,0.1));border:1px solid rgba(212,175,106,0.3);color:var(--gold-2)}
+.injury-technique .ic svg{width:15px;height:15px}
+.injury-technique .tx h6{font-size:13px;font-weight:600;margin-bottom:3px}
+.injury-technique .tx p{font-size:12px;color:var(--muted);line-height:1.5}
+.injury-disclaimer{margin-top:14px;padding:11px 13px;border-radius:10px;background:rgba(255,180,84,0.08);border:1px solid rgba(255,180,84,0.25);font-size:11.5px;color:var(--white-2);line-height:1.5;display:flex;gap:9px;align-items:flex-start}
+.injury-disclaimer svg{width:15px;height:15px;color:#FFB454;flex-shrink:0;margin-top:1px}
+.injury-quick{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.injury-quick .qbtn{padding:7px 12px;border-radius:8px;cursor:pointer;background:rgba(0,0,0,0.3);border:1px solid var(--stroke);color:var(--white-2);font-size:12px;font-weight:600;transition:.2s}
+.injury-quick .qbtn:hover{background:var(--panel-2);border-color:var(--stroke-2)}
+
 /* ===== GUIDED SESSION VIEW ===== */
 .session-grid{display:grid;grid-template-columns:1.2fr 0.95fr;gap:20px;align-items:start}
 .session-stage{
@@ -839,7 +874,7 @@ footer{padding:48px 0 24px;border-top:1px solid var(--stroke);margin-top:60px}
 .set-counter .dot.done{background:linear-gradient(90deg,var(--gold-2),var(--cobalt-2));box-shadow:0 0 8px var(--gold-glow)}
 .set-counter .dot.active{background:var(--cobalt-2);animation:pulse 1.6s infinite}
 
-.session-controls{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:9px}
+.session-controls{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .sctrl{
   padding:14px 8px;border-radius:13px;cursor:pointer;transition:.25s;text-align:center;
   background:var(--panel);border:1px solid var(--stroke);color:#fff;
@@ -850,6 +885,10 @@ footer{padding:48px 0 24px;border-top:1px solid var(--stroke);margin-top:60px}
 .sctrl:hover{background:var(--panel-2);transform:translateY(-2px)}
 .sctrl.primary{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#05060B;border-color:rgba(255,255,255,0.3);box-shadow:0 10px 26px var(--gold-glow)}
 .sctrl.danger{background:linear-gradient(135deg,rgba(255,61,129,0.2),rgba(255,61,129,0.05));border-color:rgba(255,61,129,0.4);color:#FFB3CC}
+.sctrl.warn{background:linear-gradient(135deg,rgba(255,180,84,0.18),rgba(255,180,84,0.04));border-color:rgba(255,180,84,0.4);color:#FFD9A8}
+.injury-open-btn{margin-top:9px;width:100%;padding:12px 16px;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;font-family:'Space Grotesk';font-size:13px;font-weight:600;color:var(--pink);background:linear-gradient(135deg,rgba(255,61,129,0.12),rgba(255,61,129,0.03));border:1px solid rgba(255,61,129,0.3);transition:.25s}
+.injury-open-btn:hover{background:linear-gradient(135deg,rgba(255,61,129,0.22),rgba(255,61,129,0.06));transform:translateY(-1px);box-shadow:0 8px 22px rgba(255,61,129,0.15)}
+.injury-open-btn svg{width:17px;height:17px}
 
 .session-feedback{border-radius:var(--radius);padding:16px;background:var(--panel);border:1px solid var(--stroke);min-height:120px}
 .session-feedback .head{display:flex;align-items:center;gap:9px;margin-bottom:11px}
@@ -874,6 +913,11 @@ footer{padding:48px 0 24px;border-top:1px solid var(--stroke);margin-top:60px}
 .anatomy-card .ahead .gender-toggle button{padding:6px 10px;border:0;background:transparent;color:var(--muted);font-size:11.5px;font-weight:600;border-radius:6px;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:4px}
 .anatomy-card .ahead .gender-toggle button svg{width:11px;height:11px}
 .anatomy-card .ahead .gender-toggle button.on{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#05060B}
+.anatomy-card .toggle-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.anatomy-card .view-toggle{display:flex;gap:4px;background:rgba(0,0,0,0.3);padding:3px;border-radius:8px;border:1px solid var(--stroke)}
+.anatomy-card .view-toggle button{padding:5px 11px;border:0;background:transparent;color:var(--muted);font-size:11px;font-weight:600;border-radius:6px;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:5px}
+.anatomy-card .view-toggle button svg{width:11px;height:11px}
+.anatomy-card .view-toggle button.on{background:linear-gradient(135deg,var(--cobalt-2),var(--cobalt));color:#fff}
 .anatomy-fig-wrap{display:flex;justify-content:center;padding:8px 0 4px;position:relative}
 .anatomy-fig-wrap svg{width:200px;height:auto;max-height:380px}
 .anatomy-fig-wrap .muscle{fill:rgba(255,255,255,0.05);stroke:rgba(255,255,255,0.18);stroke-width:0.6;transition:fill .5s,filter .5s}
@@ -1612,6 +1656,46 @@ footer{padding:48px 0 24px;border-top:1px solid var(--stroke);margin-top:60px}
   </div>
 </div>
 
+<!-- ============ INJURY / HEALING MODAL ============ -->
+<div class="modal-overlay" id="injuryOverlay" onclick="if(event.target===this)closeInjury()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeInjury()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-eyebrow">Healing &amp; Recovery</div>
+    <h3 id="injuryTitle">Where did it <span class="serif">hurt?</span></h3>
+    <p class="modal-sub" id="injurySub">Tap the body area that hurts, or pick it from the list. We show recovery techniques you can do at home.</p>
+    <div class="injury-quick" id="injuryQuick">
+      <div class="qbtn" onclick="setInjuryRegion('lower-back')">Lower Back</div>
+      <div class="qbtn" onclick="setInjuryRegion('knee')">Knee</div>
+      <div class="qbtn" onclick="setInjuryRegion('shoulder')">Shoulder</div>
+      <div class="qbtn" onclick="setInjuryRegion('neck')">Neck</div>
+      <div class="qbtn" onclick="setInjuryRegion('wrist')">Wrist</div>
+      <div class="qbtn" onclick="setInjuryRegion('hamstring')">Hamstring</div>
+    </div>
+    <div class="injury-body-map">
+      <div class="injury-fig-col">
+        <div id="injuryFigWrap"></div>
+        <div class="pick-label" id="injuryPickLabel">Click an area on the figure, or use the buttons on the right.</div>
+      </div>
+      <div class="injury-info-col">
+        <div class="injury-region-list" id="injuryRegionList"></div>
+        <div class="injury-severity">
+          <span class="lbl">How bad</span>
+          <div class="injury-sev-btn on" data-v="mild" onclick="setInjurySeverity('mild')">Mild soreness</div>
+          <div class="injury-sev-btn" data-v="moderate" onclick="setInjurySeverity('moderate')">Sharp pain</div>
+          <div class="injury-sev-btn" data-v="severe" onclick="setInjurySeverity('severe')">Severe</div>
+        </div>
+        <div id="injuryResultWrap"></div>
+      </div>
+    </div>
+    <div class="injury-disclaimer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <span>This is general first aid and recovery guidance, not medical advice. Severe pain, swelling, numbness or pain that radiates needs a doctor right away. Stop any movement that increases sharp pain.</span>
+    </div>
+  </div>
+</div>
+
 </main>
 
 <footer>
@@ -2010,6 +2094,16 @@ function renderWeekly(r){
   window._weekRoutine=r.week;
   selectDay(0);
   toast('Week plan generated · '+totalEx+' exercises across '+trainDays+' days');
+  requestAnimationFrame(()=>{
+    const res=document.getElementById('result');
+    if(!res)return;
+    const r=res.getBoundingClientRect();
+    const isVisible = r.top>=0 && r.top<window.innerHeight*0.6;
+    if(!isVisible){
+      const top=window.scrollY + r.top - 90;
+      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    }
+  });
 }
 
 function selectDay(i){
@@ -2152,6 +2246,17 @@ function renderResult(r){
   `;
   toast('Routine generated · '+r.routine.length+' exercises');
   window._lastRoutine=r.routine;
+  // bring the result panel into view smoothly without a jarring jump
+  requestAnimationFrame(()=>{
+    const res=document.getElementById('result');
+    if(!res)return;
+    const r=res.getBoundingClientRect();
+    const isVisible = r.top>=0 && r.top<window.innerHeight*0.6;
+    if(!isVisible){
+      const top=window.scrollY + r.top - 90; // leave the top bar visible
+      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    }
+  });
 }
 
 /* ============ LIBRARY ============ */
@@ -2778,28 +2883,336 @@ function openHowTo(name,muscle){
 }
 function closeHowTo(){document.getElementById('howtoOverlay').classList.remove('show');}
 function capitalize(s){return s?s[0].toUpperCase()+s.slice(1):s;}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeHowTo();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeHowTo();closeInjury();}});
+
+/* ============ INJURY / HEALING GUIDE ============ */
+const INJURY_GUIDES={
+  'lower-back':{
+    name:'Lower Back',area:'Lumbar spine',
+    techniques:[
+      {t:'Child pose hold',d:'Kneel, sit hips back to heels, arms forward, forehead down. Breathe slow for 60 to 90 seconds. Decompresses the lumbar spine.'},
+      {t:'Knee to chest',d:'Lie on your back, pull one knee to the chest, hold 30 seconds each side. Gentle traction, no forcing. Relieves tightness.'},
+      {t:'Cat cow flow',d:'On hands and knees, arch then round the spine slowly for one minute. Restores mobility without load.'},
+      {t:'Hip flexor stretch',d:'Kneeling lunge, tuck pelvis under, lean into the front leg. Tight hip flexors pull on the lower back.'}
+    ],
+    avoid:'Heavy deadlifts, bent over rows, loaded twisting. Sit ups and crunches can make it worse if the disc is irritated.',
+    redFlags:'Numbness down the leg, loss of bladder or bowel control, pain after a fall, or weakness in the foot. See a doctor now.'
+  },
+  'knee':{
+    name:'Knee',area:'Patellofemoral / meniscus',
+    techniques:[
+      {t:'RICE protocol',d:'Rest, Ice 15 minutes wrapped in a towel, Compression with a light bandage, Elevate above heart. Repeat every 2 hours the first day.'},
+      {t:'Quad isometric hold',d:'Sit with leg straight, push the back of the knee into the floor, hold 5 seconds. 10 reps. Keeps the quad firing without bending the knee.'},
+      {t:'Straight leg raise',d:'Lie down, keep the leg straight, lift to 45 degrees, lower slow. 3 sets of 12. Loads the quad with zero knee bend.'},
+      {t:'Foam roll the quads and IT band',d:'Roll slowly, pause on tender spots for 30 seconds. Tight quads and IT band pull the kneecap off track.'}
+    ],
+    avoid:'Deep squats, lunges past the toes, leg extensions with heavy load, running on hard ground until pain free.',
+    redFlags:'Locking, giving way, loud pop with swelling, unable to bear weight. See a doctor within 24 hours.'
+  },
+  'shoulder':{
+    name:'Shoulder',area:'Rotator cuff / labrum',
+    techniques:[
+      {t:'Pendulum swing',d:'Lean on a table, let the sore arm hang, swing it gently in small circles for 60 seconds each direction. Decompresses the joint.'},
+      {t:'Wall walk',d:'Face a wall, walk the fingers of the sore arm up the wall slowly, hold, walk back down. 5 reps. Gentle range of motion.'},
+      {t:'Isometric external rotation',d:'Bend elbow to 90, press the back of the hand into a door frame, hold 5 seconds. 10 reps. Fires the rotator cuff safely.'},
+      {t:'Sleep position',d:'Sleep on the good side with a pillow hugging the sore arm to stop it dropping forward. Stops overnight irritation.'}
+    ],
+    avoid:'Overhead press, bench press with a wide grip, pull ups, dipping below parallel. Any move that spikes sharp pinching pain.',
+    redFlags:'Sudden weakness lifting the arm, a pop with instant bruising, pain that wakes you at night. See a doctor soon.'
+  },
+  'neck':{
+    name:'Neck',area:'Cervical spine / traps',
+    techniques:[
+      {t:'Chin tucks',d:'Sit tall, tuck the chin straight back (double chin), hold 3 seconds. 10 reps. Restores the neck curve.'},
+      {t:'Upper trap stretch',d:'Drop one ear toward the shoulder, same side hand reaches down, hold 20 seconds each side. No pulling.'},
+      {t:'Thoracic extension',d:'Lie with a foam roller across the upper back, support the head, extend gently over it. 60 seconds. Frees the mid back that drives neck pain.'},
+      {t:'Heat then move',d:'Warm towel for 10 minutes, then slow rotations. Heat first, movement second.'
+      }
+    ],
+    avoid:'Heavy shrugs, behind the neck press, barbell back squat with the bar high on the neck, long phone looking down sessions.',
+    redFlags:'Pain radiating down the arm, numbness, weakness in the grip, pain after a crash. See a doctor.'
+  },
+  'wrist':{
+    name:'Wrist',area:'Carpal tunnel / tendons',
+    techniques:[
+      {t:'Wrist extension stretch',d:'Arm forward, palm down, pull the hand back with the other hand, hold 20 seconds. Opens the front of the wrist.'},
+      {t:'Wrist flexor stretch',d:'Palm up, pull the fingers down gently, hold 20 seconds. 3 reps each side.'},
+      {t:'Tendon glides',d:'Make a fist, then hook fist, then straight hand, then table top. 5 cycles. Keeps the tendons sliding.'},
+      {t:'Neutral setup',d:'Check your keyboard, the wrist should be straight, not bent up. A small foam rest helps a lot.'}
+    ],
+    avoid:'Heavy bench with a bent back wrist, front squats with a clean grip if it pinches, long mouse sessions without breaks.',
+    redFlags:'Numbness or tingling in the thumb and first fingers that wakes you at night. Could be carpal tunnel, get it checked.'
+  },
+  'hamstring':{
+    name:'Hamstring',area:'Biceps femoris',
+    techniques:[
+      {t:'RICE first 48 hours',d:'Rest, Ice 15 minutes, Compression, Elevate. No stretching yet, that tears fresh fibres again.'},
+      {t:'Gentle active range',d:'Lie down, slide the heel along the floor toward the butt, straighten back. 10 reps. Movement, not stretch.'},
+      {t:'Foam roll after 3 days',d:'Roll the back of the thigh slow, pause on sore spots. Only once acute pain is gone.'},
+      {t:'Eccentric bridge walkout',d:'Lie on back, hips up, walk the heels out slow. Rebuilds the tendon under load. Start week 2.'
+      }
+    ],
+    avoid:'Toe touch stretches in the first week, deadlifts, sprints, hill running until full strength is back.',
+    redFlags:'A visible dent or bruising high on the back of the thigh, or pain that stops you walking. Grade 2 or 3 tear, see a physio.'
+  },
+  'elbow':{
+    name:'Elbow',area:'Tendons (tennis or golfer elbow)',
+    techniques:[
+      {t:'Forearm massage',d:'Work the forearm muscles with the other thumb, slow circles for 2 minutes. Tight forearms load the elbow tendon.'},
+      {t:'Eccentric wrist extension',d:'Hold a light dumbbell, palm down, lift with the other hand, lower slow with the sore side. 3 sets of 15.'},
+      {t:'Ice after use',d:'Ice the outer or inner elbow 10 minutes after training. Calms the tendon.'},
+      {t:'Grip check',d:'Stop death gripping the bar. A loose hook grip takes the load off the elbow tendon.'}
+    ],
+    avoid:'Heavy curls, skull crushers, lots of pull ups, chin ups with a narrow grip. Anything that loads the sore tendon repetitively.',
+    redFlags:'Pain that does not improve in 2 weeks, locking, or swelling. Could need imaging, see a physio.'
+  },
+  'hip':{
+    name:'Hip',area:'Hip flexor / labrum',
+    techniques:[
+      {t:'Kneeling hip flexor stretch',d:'Kneeling lunge, tuck the pelvis hard, squeeze the back glute, lean forward. 30 seconds each side.'},
+      {t:'Glute bridge',d:'Lie down, knees bent, drive hips up, squeeze. 3 sets of 15. Strengthens the glutes that balance the hip.'},
+      {t:'Figure 4 stretch',d:'Lie down, cross one ankle over the opposite knee, pull the thigh toward the chest. 30 seconds each side.'},
+      {t:'Hip capsule mobilisation',d:'On hands and knees, slow circles with the hip. 10 each direction. Frees the joint capsule.'}
+    ],
+    avoid:'Deep squats with the knees caving, heavy sumo deadlifts, sprinting, anything that clicks with sharp pain.',
+    redFlags:'Clicking with sharp pain, locking, groin pain that does not go. Could be a labral tear, see a physio.'
+  },
+  'ankle':{
+    name:'Ankle',area:'Ligaments / Achilles',
+    techniques:[
+      {t:'RICE first 48 hours',d:'Rest, Ice, Compression, Elevate. Stop swelling early.'},
+      {t:'ABC ankle rotations',d:'Trace the alphabet in the air with the big toe. Restores full range of motion.'},
+      {t:'Calf eccentric',d:'Stand on a step, rise with both feet, lower with the sore ankle slow. 3 sets of 15.'},
+      {t:'Balance retrain',d:'Stand on the sore ankle, eyes closed, 30 seconds. Rebuilds proprioception, stops repeat sprains.'}
+    ],
+    avoid:'Running, jumping, lateral cuts until full weight bearing is pain free.',
+    redFlags:'Cannot bear weight, a visible deformity, or a pop with instant swelling. Possible fracture, get an x-ray.'
+  },
+  'chest':{
+    name:'Chest',area:'Pec strain / rib',
+    techniques:[
+      {t:'Rest from pressing',d:'Stop bench, push ups and dips for a week. The pec needs load off to heal.'},
+      {t:'Doorway stretch',d:'Forearm on a door frame, step through gently, hold 30 seconds. Opens the pec.'},
+      {t:'Thoracic rotation',d:'On hands and knees, thread one arm under, reach up to the ceiling. 8 reps each side.'},
+      {t:'Gentle activation',d:'Wall push ups, slow, only once pain free. 2 sets of 10 to wake the pec back up.'}
+    ],
+    avoid:'Bench press, dips, push ups, cable flyes. Any stretch under load hurts a strain.',
+    redFlags:'Pain with breathing, sharp pain pressing on the sternum, pain after impact. Could be a rib issue, see a doctor.'
+  }
+};
+
+function injuryBodySVG(){
+  return `<svg viewBox="0 0 160 380" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="muscleGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#E8C789" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#4D74FF" stop-opacity="0.7"/>
+      </linearGradient>
+    </defs>
+    <ellipse class="body-stroke" cx="80" cy="22" rx="14" ry="16" fill="rgba(255,255,255,0.04)"/>
+    <path class="body-stroke" d="M73 36 Q73 44 70 48 H90 Q87 44 87 36"/>
+    <!-- neck clickable -->
+    <path class="injury-region" data-r="neck" d="M72 40 Q72 52 68 56 L92 56 Q88 52 88 40 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- shoulder left + right clickable -->
+    <path class="injury-region" data-r="shoulder" d="M58 52 Q48 56 52 70 Q58 66 66 60 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <path class="injury-region" data-r="shoulder" d="M102 52 Q112 56 108 70 Q102 66 94 60 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- chest clickable -->
+    <path class="injury-region" data-r="chest" d="M66 58 Q64 76 70 90 L90 90 Q96 76 94 58 Q80 54 66 58 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- elbow clickable -->
+    <circle class="injury-region" data-r="elbow" cx="44" cy="118" r="9" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <circle class="injury-region" data-r="elbow" cx="116" cy="118" r="9" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- wrist clickable -->
+    <circle class="injury-region" data-r="wrist" cx="42" cy="152" r="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <circle class="injury-region" data-r="wrist" cx="118" cy="152" r="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- lower back clickable -->
+    <path class="injury-region" data-r="lower-back" d="M62 110 Q60 124 64 134 L96 134 Q100 124 98 110 Q80 104 62 110 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- hip clickable -->
+    <path class="injury-region" data-r="hip" d="M58 134 Q52 146 60 156 L100 156 Q108 146 102 134 Q80 130 58 134 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- hamstring clickable -->
+    <path class="injury-region" data-r="hamstring" d="M64 156 Q60 180 64 210 L76 210 Q74 180 72 156 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <path class="injury-region" data-r="hamstring" d="M96 156 Q100 180 96 210 L84 210 Q86 180 88 156 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- knee clickable -->
+    <circle class="injury-region" data-r="knee" cx="70" cy="216" r="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <circle class="injury-region" data-r="knee" cx="90" cy="216" r="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- ankle clickable -->
+    <circle class="injury-region" data-r="ankle" cx="70" cy="300" r="9" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <circle class="injury-region" data-r="ankle" cx="90" cy="300" r="9" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="0.6"/>
+    <!-- body outline -->
+    <path class="body-stroke" d="M66 48 Q80 44 94 48" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/>
+    <path class="body-stroke" d="M64 156 Q56 200 62 260 L70 300 Q70 310 66 314" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/>
+    <path class="body-stroke" d="M96 156 Q104 200 98 260 L90 300 Q90 310 94 314" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/>
+  </svg>`;
+}
+
+const INJURY_REGIONS=[
+  {k:'neck',n:'Neck',icon:'<path d="M12 2v6M9 5h6"/>'},
+  {k:'shoulder',n:'Shoulder',icon:'<path d="m4 12 8-8 8 8M4 12v8h16v-8"/>'},
+  {k:'chest',n:'Chest',icon:'<circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>'},
+  {k:'elbow',n:'Elbow',icon:'<path d="M16 4 8 12l8 8M8 12h8"/>'},
+  {k:'wrist',n:'Wrist',icon:'<circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4"/>'},
+  {k:'lower-back',n:'Lower Back',icon:'<path d="M4 12c4 4 12 4 16 0M4 18c4-4 12-4 16 0"/>'},
+  {k:'hip',n:'Hip',icon:'<path d="M4 12c2-4 6-4 8 0M20 12c-2-4-6-4-8 0"/>'},
+  {k:'hamstring',n:'Hamstring',icon:'<path d="M12 2v20M9 6l3 3 3-3"/>'},
+  {k:'knee',n:'Knee',icon:'<circle cx="12" cy="12" r="4"/><path d="M8 12h8"/>'},
+  {k:'ankle',n:'Ankle',icon:'<path d="M7 4h10l-2 8H9L7 4zM12 12v8"/>'}
+];
+
+let _injuryRegion=null,_injurySeverity='mild';
+
+function openInjuryGuide(muscleKey, exName){
+  document.getElementById('injuryOverlay').classList.add('show');
+  if(!document.getElementById('injuryFigWrap').innerHTML){
+    document.getElementById('injuryFigWrap').innerHTML=injuryBodySVG();
+    // wire region clicks
+    document.querySelectorAll('#injuryFigWrap .injury-region').forEach(el=>{
+      el.addEventListener('click',()=>setInjuryRegion(el.dataset.r));
+    });
+  }
+  // build region list once
+  const list=document.getElementById('injuryRegionList');
+  if(!list.dataset.built){
+    list.innerHTML=INJURY_REGIONS.map(r=>`<div class="injury-region-btn" data-r="${r.k}" onclick="setInjuryRegion('${r.k}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${r.icon}</svg>${r.n}</div>`).join('');
+    list.dataset.built='1';
+  }
+  // map a muscle group to a likely injury region
+  const muscleToRegion={chest:'chest',back:'lower-back',legs:'knee',shoulders:'shoulder',arms:'elbow',core:'lower-back',glutes:'hip',cardio:'knee'};
+  const guess=muscleToRegion[muscleKey];
+  if(guess){
+    setInjuryRegion(guess);
+    document.getElementById('injurySub').textContent=exName?('Could not finish '+exName+'. Here is recovery for the '+INJURY_GUIDES[guess].name.toLowerCase()+'.'):'Here is recovery guidance you can do at home.';
+  }else{
+    setInjuryRegion('lower-back');
+  }
+  document.getElementById('injuryTitle').innerHTML='Where did it <span class="serif">hurt?</span>';
+}
+
+function setInjuryRegion(r){
+  _injuryRegion=r;
+  // figure highlight
+  document.querySelectorAll('#injuryFigWrap .injury-region').forEach(el=>{
+    el.classList.toggle('on',el.dataset.r===r);
+  });
+  document.querySelectorAll('#injuryRegionList .injury-region-btn').forEach(el=>{
+    el.classList.toggle('on',el.dataset.r===r);
+  });
+  const guide=INJURY_GUIDES[r];
+  document.getElementById('injuryPickLabel').textContent=guide?('Selected: '+guide.name+'. Adjust severity on the right.'):'Click an area on the figure, or use the buttons.';
+  renderInjuryResult();
+}
+
+function setInjurySeverity(s){
+  _injurySeverity=s;
+  document.querySelectorAll('.injury-sev-btn').forEach(el=>el.classList.toggle('on',el.dataset.v===s));
+  renderInjuryResult();
+}
+
+function renderInjuryResult(){
+  const wrap=document.getElementById('injuryResultWrap');
+  if(!_injuryRegion){wrap.innerHTML='';return;}
+  const guide=INJURY_GUIDES[_injuryRegion];
+  if(!guide){wrap.innerHTML='';return;}
+  const sevLabel={mild:'mild soreness',moderate:'sharp pain',severe:'severe pain'}[_injurySeverity]||'mild soreness';
+  let intro='';
+  if(_injurySeverity==='severe'){
+    intro='<div class="injury-disclaimer" style="margin-top:0;margin-bottom:12px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg><span>For severe pain, stop training now and get it checked. Use the techniques below only for comfort, not as a substitute for a diagnosis.</span></div>';
+  }
+  wrap.innerHTML=intro+`
+    <div class="injury-result">
+      <h5><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${guide.name} recovery</h5>
+      <div class="ix-meta">Area: ${guide.area}. You reported ${sevLabel}. ${_injurySeverity==='mild'?'Try these for two to three days, then ease back in.':'See the warning below.'}</div>
+      ${guide.techniques.map(t=>`
+        <div class="injury-technique">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div class="tx"><h6>${t.t}</h6><p>${t.d}</p></div>
+        </div>
+      `).join('')}
+      <div class="injury-technique" style="border-left:3px solid #FFB454">
+        <div class="ic" style="background:rgba(255,180,84,0.2);border-color:rgba(255,180,84,0.3);color:#FFB454"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5 5l14 14"/></svg></div>
+        <div class="tx"><h6>Avoid for now</h6><p>${guide.avoid}</p></div>
+      </div>
+      <div class="injury-technique" style="border-left:3px solid var(--pink)">
+        <div class="ic" style="background:rgba(255,61,129,0.18);border-color:rgba(255,61,129,0.3);color:var(--pink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+        <div class="tx"><h6>See a doctor if</h6><p>${guide.redFlags}</p></div>
+      </div>
+    </div>
+  `;
+}
+
+function closeInjury(){document.getElementById('injuryOverlay').classList.remove('show');}
 
 /* ============ ANATOMY FIGURE ============ */
 // Map muscle keys (from exercise data) to anatomy SVG group ids
 const MUSCLE_MAP={
   chest:['pecs','front-shoulders'],
-  back:['lats','traps','rear-delts'],
+  back:['lats','traps','rear-delts','lower-back'],
   legs:['quads','hamstrings','calves','glutes'],
   shoulders:['front-shoulders','side-delts','rear-delts'],
   arms:['biceps','triceps'],
-  core:['abs','obliques'],
+  core:['abs','obliques','lower-back'],
   glutes:['glutes','hamstrings'],
   cardio:['pecs','quads','abs']
 };
 
-function anatomySVG(gender){
-  // front-facing anatomical figure with named muscle regions
-  // male: broader shoulders, narrower hips; female: narrower shoulders, wider hips
+function anatomySVG(gender, view){
+  // view: 'front' (default) or 'back'
+  view=view||'front';
   const maleBody = gender==='male';
   const shoulderW = maleBody?62:54;
   const waistW = maleBody?40:34;
   const hipW = maleBody?44:52;
+  if(view==='back'){
+    return `
+  <svg viewBox="0 0 160 380" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="muscleGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#E8C789" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#4D74FF" stop-opacity="0.7"/>
+      </linearGradient>
+    </defs>
+    <!-- head (back) -->
+    <ellipse class="body-stroke" cx="80" cy="22" rx="14" ry="16" fill="rgba(255,255,255,0.04)"/>
+    <!-- neck -->
+    <path class="body-stroke" d="M73 36 Q73 44 70 48 H90 Q87 44 87 36"/>
+    <!-- traps (upper back, prominent from behind) -->
+    <path class="muscle" data-m="traps" d="M66 50 Q80 46 94 50 L98 62 Q80 58 62 62 Z"/>
+    <path class="muscle" data-m="traps" d="M62 60 Q66 54 80 56 Q94 54 98 60 L96 70 Q80 66 64 70 Z"/>
+    <!-- rear delts - left -->
+    <path class="muscle" data-m="rear-delts" d="M66 58 Q${80-shoulderW/2-8} 56 ${80-shoulderW/2-4} 66 Q${80-shoulderW/2} 72 ${80-shoulderW/2+4} 68 Q${80-shoulderW/2+2} 60 70 62 Z"/>
+    <!-- rear delts - right -->
+    <path class="muscle" data-m="rear-delts" d="M94 58 Q${80+shoulderW/2+8} 56 ${80+shoulderW/2+4} 66 Q${80+shoulderW/2} 72 ${80+shoulderW/2-4} 68 Q${80+shoulderW/2-2} 60 90 62 Z"/>
+    <!-- side delts (back) -->
+    <path class="muscle" data-m="side-delts" d="M${80-shoulderW/2-4} 62 Q${80-shoulderW/2-2} 72 ${80-shoulderW/2} 76 Q${80-shoulderW/2+2} 70 ${80-shoulderW/2} 64 Z"/>
+    <path class="muscle" data-m="side-delts" d="M${80+shoulderW/2+4} 62 Q${80+shoulderW/2+2} 72 ${80+shoulderW/2} 76 Q${80+shoulderW/2-2} 70 ${80+shoulderW/2} 64 Z"/>
+    <!-- lats (latissimus dorsi) - the wide back muscles -->
+    <path class="muscle" data-m="lats" d="M64 72 Q58 90 ${80-waistW/2-2} 110 L${80-6} 110 Q${80-2} 92 70 74 Z"/>
+    <path class="muscle" data-m="lats" d="M96 72 Q102 90 ${80+waistW/2+2} 110 L${80+6} 110 Q${80+2} 92 90 74 Z"/>
+    <!-- mid back / rhomboids hint -->
+    <path class="muscle" data-m="traps" d="M70 74 Q80 70 90 74 L88 90 Q80 86 72 90 Z" opacity="0.85"/>
+    <!-- lower back -->
+    <path class="muscle" data-m="lower-back" d="M${80-waistW/2+2} 108 Q${80-waistW/2} 120 ${80-waistW/2+4} 132 L${80+waistW/2-4} 132 Q${80+waistW/2} 120 ${80+waistW/2-2} 108 Q80 104 ${80-waistW/2+2} 108 Z"/>
+    <!-- triceps - left (back of arm) -->
+    <path class="muscle" data-m="triceps" d="M${80-shoulderW/2-2} 76 Q${80-shoulderW/2-6} 92 ${80-shoulderW/2-4} 108 Q${80-shoulderW/2} 106 ${80-shoulderW/2+2} 92 Q${80-shoulderW/2+2} 80 ${80-shoulderW/2-2} 76 Z"/>
+    <!-- triceps - right -->
+    <path class="muscle" data-m="triceps" d="M${80+shoulderW/2+2} 76 Q${80+shoulderW/2+6} 92 ${80+shoulderW/2+4} 108 Q${80+shoulderW/2} 106 ${80+shoulderW/2-2} 92 Q${80+shoulderW/2-2} 80 ${80+shoulderW/2+2} 76 Z"/>
+    <!-- forearms (back) -->
+    <path class="body-stroke" d="M${80-shoulderW/2-2} 110 Q${80-shoulderW/2-4} 126 ${80-shoulderW/2} 142 L${80-shoulderW/2+4} 142 Q${80-shoulderW/2+2} 126 ${80-shoulderW/2+2} 112 Z" fill="rgba(255,255,255,0.04)"/>
+    <path class="body-stroke" d="M${80+shoulderW/2+2} 110 Q${80+shoulderW/2+4} 126 ${80+shoulderW/2} 142 L${80+shoulderW/2-4} 142 Q${80+shoulderW/2-2} 126 ${80+shoulderW/2-2} 112 Z" fill="rgba(255,255,255,0.04)"/>
+    <!-- glutes (prominent from behind) -->
+    <path class="muscle" data-m="glutes" d="M${80-hipW/2+2} 132 Q${80-hipW/2-2} 152 ${80-4} 160 Q80 154 80 132 Q${80-8} 128 ${80-hipW/2+2} 132 Z"/>
+    <path class="muscle" data-m="glutes" d="M${80+hipW/2-2} 132 Q${80+hipW/2+2} 152 ${80+4} 160 Q80 154 80 132 Q${80+8} 128 ${80+hipW/2-2} 132 Z"/>
+    <!-- hamstrings (back of thigh, prominent from behind) -->
+    <path class="muscle" data-m="hamstrings" d="M${80-hipW/2+4} 162 Q${80-12} 184 ${80-10} 210 Q${80-6} 212 ${80-4} 210 Q${80-6} 186 ${80-2} 164 Z"/>
+    <path class="muscle" data-m="hamstrings" d="M${80+hipW/2-4} 162 Q${80+12} 184 ${80+10} 210 Q${80+6} 212 ${80+4} 210 Q${80+6} 186 ${80+2} 164 Z"/>
+    <!-- calves (back, gastrocnemius) -->
+    <path class="muscle" data-m="calves" d="M${80-12} 214 Q${80-16} 236 ${80-12} 266 Q${80-8} 268 ${80-6} 266 Q${80-8} 238 ${80-6} 216 Z"/>
+    <path class="muscle" data-m="calves" d="M${80+12} 214 Q${80+16} 236 ${80+12} 266 Q${80+8} 268 ${80+6} 266 Q${80+8} 238 ${80+6} 216 Z"/>
+    <!-- feet (back) -->
+    <path class="body-stroke" d="M${80-12} 266 Q${80-16} 276 ${80-10} 280 L${80-4} 280 Q${80-4} 272 ${80-6} 266 Z" fill="rgba(255,255,255,0.04)"/>
+    <path class="body-stroke" d="M${80+12} 266 Q${80+16} 276 ${80+10} 280 L${80+4} 280 Q${80+4} 272 ${80+6} 266 Z" fill="rgba(255,255,255,0.04)"/>
+    <!-- center line (spine) -->
+    <line class="body-stroke" x1="80" y1="50" x2="80" y2="160" stroke-dasharray="2 2" opacity="0.4"/>
+  </svg>`;
+  }
   return `
   <svg viewBox="0 0 160 380" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -2866,16 +3279,28 @@ function highlightMuscles(muscleKey){
     if(target.includes(m.dataset.m))m.classList.add('active');
     else m.classList.remove('active');
   });
-  // update muscle list display
-  const all=['pecs','lats','traps','front-shoulders','biceps','triceps','abs','obliques','quads','hamstrings','glutes','calves'];
+  // update muscle list display - show muscles relevant to the current view
+  const view=window._anatomyView||'front';
+  const all=['pecs','lats','traps','front-shoulders','rear-delts','side-delts','biceps','triceps','abs','obliques','lower-back','quads','hamstrings','glutes','calves'];
   const list=document.getElementById('anatomyMuscleList');
   if(list){
     list.innerHTML=all.map(m=>{
-      const label={pecs:'Chest',lats:'Lats',traps:'Traps','front-shoulders':'Delts',biceps:'Biceps',triceps:'Triceps',abs:'Abs',obliques:'Obliques',quads:'Quads',hamstrings:'Hamstrings',glutes:'Glutes',calves:'Calves'}[m]||m;
+      const label={pecs:'Chest',lats:'Lats',traps:'Traps','front-shoulders':'Front Delts','rear-delts':'Rear Delts','side-delts':'Side Delts',biceps:'Biceps',triceps:'Triceps',abs:'Abs',obliques:'Obliques','lower-back':'Lower Back',quads:'Quads',hamstrings:'Hamstrings',glutes:'Glutes',calves:'Calves'}[m]||m;
       const active=target.includes(m);
       return '<span class="am'+(active?'':' dim')+'">'+label+'</span>';
     }).join('');
   }
+}
+
+let _anatomyView='front';
+function setAnatomyView(view){
+  _anatomyView=view;
+  const g=_anatomyGender||STATE.gender||'male';
+  const wrap=document.getElementById('anatomyFigWrap');
+  if(wrap){wrap.innerHTML=anatomySVG(g,view);}
+  document.querySelectorAll('.anatomy-card .view-toggle button').forEach(b=>b.classList.toggle('on',b.dataset.v===view));
+  const ex=SESSION.routine[SESSION.exIndex];
+  if(ex)highlightMuscles(ex.muscle);
 }
 
 /* ============ GUIDED SESSION CONTROLLER ============ */
@@ -3135,21 +3560,29 @@ function renderSessionView(){
         <div class="session-controls" style="margin-top:14px">
           <div class="sctrl" id="ctrlCam" onclick="toggleSessionCam()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m23 7-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-            <span class="lbl" id="ctrlCamLbl">Start Camera</span>
+            <span class="lbl" id="ctrlCamLbl">Camera</span>
           </div>
           <div class="sctrl primary" id="ctrlSet" onclick="finishSet()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
             <span class="lbl">Finish Set</span>
+          </div>
+          <div class="sctrl warn" onclick="cantComplete()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span class="lbl">Can't Finish</span>
           </div>
           <div class="sctrl" onclick="nextExercise()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v16l10-8zM19 5v14"/></svg>
-            <span class="lbl">Next Exercise</span>
+            <span class="lbl">Skip</span>
           </div>
           <div class="sctrl danger" onclick="endSession()">
             <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
-            <span class="lbl">End Session</span>
+            <span class="lbl">End</span>
           </div>
         </div>
+        <button class="injury-open-btn" onclick="openInjuryGuide(SESSION.routine[SESSION.exIndex]?.muscle, SESSION.routine[SESSION.exIndex]?.name)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Where did it hurt? Get a healing technique
+        </button>
       </div>
       <div class="session-side">
         <div class="current-ex-card">
@@ -3180,12 +3613,18 @@ function renderSessionView(){
         <div class="anatomy-card">
           <div class="ahead">
             <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M12 8v6m-3 7 3-7 3 7"/></svg>Anatomy</h4>
+          </div>
+          <div class="toggle-row">
             <div class="gender-toggle">
               <button class="${gender==='male'?'on':''}" onclick="setAnatomyGender('male')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="14" r="6"/><path d="m14 10 7-7M16 3h5v5"/></svg>Male</button>
               <button class="${gender==='female'?'on':''}" onclick="setAnatomyGender('female')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M12 15v6M9 18h6"/></svg>Female</button>
             </div>
+            <div class="view-toggle">
+              <button class="on" data-v="front" onclick="setAnatomyView('front')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="2.5"/></svg>Front</button>
+              <button data-v="back" onclick="setAnatomyView('back')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 11h6"/></svg>Back</button>
+            </div>
           </div>
-          <div class="anatomy-fig-wrap" id="anatomyFigWrap">${anatomySVG(gender)}</div>
+          <div class="anatomy-fig-wrap" id="anatomyFigWrap">${anatomySVG(gender,'front')}</div>
           <div class="anatomy-muscle-list" id="anatomyMuscleList"></div>
           <div class="anatomy-legend">
             <span><span class="swatch on"></span>Working</span>
@@ -3210,9 +3649,10 @@ function renderSessionView(){
 let _anatomyGender=null;
 function setAnatomyGender(g){
   _anatomyGender=g;
+  const view=window._anatomyView||'front';
   const wrap=document.getElementById('anatomyFigWrap');
-  if(wrap){wrap.innerHTML=anatomySVG(g);}
-  document.querySelectorAll('.gender-toggle button').forEach(b=>b.classList.remove('on'));
+  if(wrap){wrap.innerHTML=anatomySVG(g,view);}
+  document.querySelectorAll('.anatomy-card .gender-toggle button').forEach(b=>b.classList.remove('on'));
   if(event&&event.currentTarget)event.currentTarget.classList.add('on');
   const ex=SESSION.routine[SESSION.exIndex];
   if(ex)highlightMuscles(ex.muscle);
@@ -3251,12 +3691,12 @@ function startDayInGuidedSession(dayIdx){
 function toggleSessionCam(){
   if(SESSION.camActive){
     sessionPauseCamera();
-    document.getElementById('ctrlCamLbl').textContent='Start Camera';
+    document.getElementById('ctrlCamLbl').textContent='Start';
     document.getElementById('sessionStatus').textContent='Camera paused';
   }else{
     sessionStartCamera().then(ok=>{
       if(ok){
-        document.getElementById('ctrlCamLbl').textContent='Pause Camera';
+        document.getElementById('ctrlCamLbl').textContent='Pause';
         document.getElementById('sessionStatus').textContent='Tracking · '+SESSION.routine[SESSION.exIndex].name;
       }
     });
@@ -3273,14 +3713,26 @@ function finishSet(){
     nextExercise();
   }else{
     toast('Set '+SESSION.setIndex+' of '+ex.sets+' done. Rest '+ex.rest+'s, then go.');
-    // brief rest indicator in status
     document.getElementById('sessionStatus').textContent='Rest '+ex.rest+'s · Set '+SESSION.setIndex+' next';
     sRepCount=0;
     renderSessionView();
     if(SESSION.camActive){
-      document.getElementById('ctrlCamLbl').textContent='Pause Camera';
+      document.getElementById('ctrlCamLbl').textContent='Pause';
     }
   }
+}
+
+function cantComplete(){
+  if(!SESSION.routine.length)return;
+  const ex=SESSION.routine[SESSION.exIndex];
+  if(!ex)return;
+  toast('Skipped '+ex.name+'. Opening recovery guide for the working muscle.');
+  // jump to the injury/healing guide for the current muscle group
+  openInjuryGuide(ex.muscle, ex.name);
+  // advance to next exercise after showing the guide
+  setTimeout(()=>{
+    nextExercise();
+  },300);
 }
 
 function nextExercise(){
@@ -3293,7 +3745,7 @@ function nextExercise(){
   }
   renderSessionView();
   if(SESSION.camActive){
-    document.getElementById('ctrlCamLbl').textContent='Pause Camera';
+    document.getElementById('ctrlCamLbl').textContent='Pause';
     document.getElementById('sessionStatus').textContent='Tracking · '+SESSION.routine[SESSION.exIndex].name;
   }
   toast('Next: '+SESSION.routine[SESSION.exIndex].name);
